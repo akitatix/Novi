@@ -1,19 +1,20 @@
 class SkillsController < ApplicationController
 before_action :set_user, only: [:create, :new]
-
+before_action :set_skill, only: [:new]
   def index
-    @skills = Skill.all
+    @skills = policy_scope(Skill)
   end
 
   def new
-    @skill = Skill.new
+  end
+
+  def show
+    @skill = Skill.find(params[:id])
+    authorize @skill
   end
 
   def create
     @skill = Skill.new(skill_params)
-    # @skill_order = SkillOrder.new
-    # @skill_order.skill = @skill
-    # @skill_order.user = @user
     @skill.available = true
     @skill.save
 
@@ -30,6 +31,11 @@ before_action :set_user, only: [:create, :new]
 
   def set_user
     @user = User.find(params[:user_id])
+  end
+
+  def set_skill
+    @skill = Skill.new
+    authorize @skill
   end
 
 
