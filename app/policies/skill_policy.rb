@@ -6,10 +6,6 @@ class SkillPolicy < ApplicationPolicy
     end
   end
 
-  def create?
-    record.user == user
-  end
-
   def show?
     true  # Anyone can view a restaurant
   end
@@ -19,10 +15,10 @@ class SkillPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user  # Only restaurant creator can update it
+    record.users.include? user  # Only restaurant creator can update it
   end
 
   def destroy?
-    record.user == user  # Only restaurant creator can update it
+    record.users.include? user  # Only restaurant creator can update it
   end
 end
