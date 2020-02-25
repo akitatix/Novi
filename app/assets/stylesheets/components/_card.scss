@@ -1,0 +1,70 @@
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  padding: 30px;
+  justify-content: space-evenly;
+}
+
+.card-trip {
+  width: 500px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  font-size: 16px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .cards-grid {
+
+  }
+}
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .cards-grid {
+
+  }
+}
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}w
+

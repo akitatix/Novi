@@ -1,6 +1,87 @@
-<h1><%= @test %></h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%if user_signed_in? %>
-  <%= link_to "deco", destroy_user_session_path, method: :delete %>
-<% end %>
-<%= link_to "index", "/skills" %>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="style.css">
+  <title>Transhumanisme - Locations de skills pour devenir meilleur</title>
+</head>
+<body>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1533749871411-5e21e14bcc7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80);">
+  <div class="container">
+    <h1 class="text-center">Devenez la meilleure version de vous même. Tout de suite. </h1>
+    <p class="text-center">Novi vous propose à la location une sélection de talents prêts à l'emploi, pour vous permettre d'atteindre vos objectifs et bien plus encore.</p>
+  </div>
+</div>
+
+  <div class="container">
+  <div class="cards-grid">
+    <div class="card-trip">
+      <%= image_tag "image_de_code.jpg", alt: "alttext" %>
+      <div class="card-trip-infos">
+        <div>
+          <h2>Apprendre à coder</h2>
+          <p>Devenez un maître à coder sur une sélection de languages.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Prise de parole en public</h2>
+          <p>Vous êtes timide et devez passer sur scène ? Aucun problème avec le charisme des plus grands orateurs.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Duel à l'épée</h2>
+          <p>Provoquez votre rival à l'épe et soyez sûr de gagner !</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Chasse à l'ours</h2>
+          <p>Devenez un pisteur hors-pair</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Préparation de potions</h2>
+          <p>Short description here!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Parcours</h2>
+          <p>Short description here!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <%if user_signed_in? %>
+    <%= link_to "deco", destroy_user_session_path, method: :delete %>
+  <% end %>
+  <%= link_to "index", "/skills" %>
+
+</body>
