@@ -41,7 +41,7 @@ before_action :set_skill, only: [:new, :create]
   end
 
   def skill_params
-    params.require(:skill).permit(:name, :description, :price)
+    params.require(:skill).permit(:name, :description, :price, :photo)
   end
 
   def set_user
