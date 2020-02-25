@@ -3,6 +3,6 @@
   <p><%= x.name %> - <%= link_to "show", skill_path(x) %></p>
 <% end %>
 <% if user_signed_in? %>
- <%= link_to "new", new_user_skill_path(current_user) %>
+ <%= link_to "new", new_skill_path %>
 <% end %>
 

@@ -6,6 +6,10 @@ class SkillPolicy < ApplicationPolicy
     end
   end
 
+  def create?
+    record.user == user
+  end
+
   def show?
     true  # Anyone can view a restaurant
   end

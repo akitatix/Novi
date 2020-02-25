@@ -1,6 +1,5 @@
 class SkillsController < ApplicationController
-before_action :set_user, only: [:create, :new]
-before_action :set_skill, only: [:new]
+before_action :set_skill, only: [:new, :create]
   def index
     @skills = policy_scope(Skill)
   end
@@ -15,11 +14,12 @@ before_action :set_skill, only: [:new]
 
   def create
     @skill = Skill.new(skill_params)
+    @skill.users << current_user
     @skill.available = true
     @skill.save
 
     if @skill.save
-      redirect_to user_skills_path, notice: 'Article was successfully created.'
+      redirect_to skill_path(@skill), notice: 'Article was successfully created.'
     else
       render :new
     end
@@ -37,6 +37,4 @@ before_action :set_skill, only: [:new]
     @skill = Skill.new
     authorize @skill
   end
-
-
 end
