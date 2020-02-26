@@ -28,6 +28,7 @@ before_action :set_skill, only: [:new, :create]
 
   def show
     @skill = Skill.find(params[:id])
+    @reviews = Review.where(params[:id] == @skill.id)
     authorize @skill
   end
 
