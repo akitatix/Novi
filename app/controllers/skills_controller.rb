@@ -20,6 +20,10 @@ before_action :set_skill, only: [:new, :create]
   end
 
   def update
+    @skill = Skill.find(params[:id])
+    @skill.update(skill_params)
+    authorize @skill
+    redirect_to skill_path(@skill), notice: 'Article was successfully edited.'
   end
 
   def show
