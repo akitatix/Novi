@@ -1,7 +1,18 @@
 <h1>Skills#index</h1>
-<% @skills.each do |x|  %>
-  <p><%= x.name %> - <%= link_to "show", skill_path(x) %></p>
-<% end %>
+  <div class="container">
+    <div class="cards-grid">
+    <% @skills.each do |x|  %>
+        <div class="card-trip">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <p><%= x.name %> - <%= link_to "show", skill_path(x) %></p>
+            </div>
+          </div>
+        </div>
+    <% end %>
+    </div>
+  </div>
 <% if user_signed_in? %>
  <%= link_to "new", new_skill_path %>
 <% end %>
