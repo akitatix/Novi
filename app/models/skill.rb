@@ -5,5 +5,5 @@ class Skill < ApplicationRecord
   has_one_attached :photo
   has_many :skill_orders, :dependent => :destroy
   has_many :users, through: :skill_orders
-  has_many :reviews, through: :skill_orders, :dependent => :destroy
+  #has_many :reviews, through: :skill_orders, :dependent => :destroy
 end
