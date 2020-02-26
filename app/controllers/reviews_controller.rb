@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:new, :create]
-  before_action :set_skill, only: [:new,:create, :destroy, :update]
+  before_action :set_skill, only: [:new,:create, :destroy, :update, :edit]
   def new
   end
 
