@@ -1,7 +1,7 @@
 <h1><%= @skill.name %></h1>
 <p>Description :<%= @skill.description %></p>
 <h3>Price :<%= @skill.price %></h3>
-<%= cl_image_tag @skill.photo.key, height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag @skill.photo.key, height: 300, width: 500, crop: :scale %>
 
 <%= link_to "back", skills_path %>
 

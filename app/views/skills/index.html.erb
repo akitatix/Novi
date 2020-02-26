@@ -3,10 +3,10 @@
     <div class="cards-grid">
     <% @skills.each do |x|  %>
         <div class="card-trip">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
           <div class="card-trip-infos">
             <div>
-              <p><%= x.name %> - <%= link_to "show", skill_path(x) %></p>
+              <%= cl_image_tag x.photo.key, height: 300, width: 500, crop: :scale %>
+              <p><%= x.name %> - <%= link_to "show", skill_path(x) %>|<%= link_to "delete", skill_path(x), method: :delete %>|<%= link_to "edit", edit_skill_path(x)%></p>
             </div>
           </div>
         </div>
