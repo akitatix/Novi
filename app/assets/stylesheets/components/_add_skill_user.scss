@@ -1,0 +1,30 @@
+.tphoto {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom:10px;
+}
+
+.skill {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 25px;
+  font-weight: normal;
+  border: 3px solid white;
+  padding: 10px;
+  padding-bottom: 50px;
+  margin-bottom: 10px;
+}
+
+.price {
+  display: inline-block;
+  position: relative;
+  left: 15px;
+  bottom: 40px;
+  max-width: 250px;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px;
+  background-color: black;
+}

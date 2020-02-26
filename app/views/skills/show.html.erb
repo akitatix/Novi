@@ -1,6 +1,16 @@
-<h1><%= @skill.name %></h1>
-<p>Description :<%= @skill.description %></p>
-<h3>Price :<%= @skill.price %></h3>
+<div class="user-pic" style="background-color: black">
+  <div class="tphoto">
+
+    <div class="skill">
+      <h1><%= @skill.name %></h1>
+      <p><%= @skill.description %></p>
+    </div>
+
+    <div class="price">
+      <h3>Price: <%= @skill.price %></h3>
+    </div>
+
+  </div>
+</div>
 
 <%= link_to "back", skills_path %>
-
