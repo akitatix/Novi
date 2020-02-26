@@ -11,8 +11,12 @@
     </div>
 
   <%= cl_image_tag @skill.photo.key, height: 300, width: 500, crop: :scale %>
-
-  </div>
-</div>
+<% @reviews.each do |x| %>
+  <%= x.rating %>
+  <%= x.content %>
+  <%= link_to "Delete Review", skill_review_path(@skill,x), method: :delete %>
+  <%= link_to "Edit Review", edit_skill_review_path(@skill,x) %>
+<% end %>
 
 <%= link_to "back", skills_path %>
+<%= link_to "New Review", new_skill_review_path(@skill) %>
