@@ -7,6 +7,21 @@ before_action :set_skill, only: [:new, :create]
   def new
   end
 
+  def destroy
+    @skill = Skill.find(params[:id])
+    authorize @skill
+    @skill.destroy
+    redirect_to skills_path
+  end
+
+  def edit
+    @skill = Skill.find(params[:id])
+    authorize @skill
+  end
+
+  def update
+  end
+
   def show
     @skill = Skill.find(params[:id])
     authorize @skill
@@ -26,7 +41,7 @@ before_action :set_skill, only: [:new, :create]
   end
 
   def skill_params
-    params.require(:skill).permit(:name, :description, :price)
+    params.require(:skill).permit(:name, :description, :price, :photo)
   end
 
   def set_user
