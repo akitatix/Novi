@@ -1,5 +1,26 @@
 class SkillsController < ApplicationController
 before_action :set_skill, only: [:new, :create]
+
+  def achat
+    @skill = Skill.find(params[:skill_id])
+    @skill.users = []
+    @skill.users << current_user
+    @skill.available = false
+    @skill.save
+
+    redirect_to skill_orders_path
+    authorize @skill
+  end
+
+  def vente
+    @skill = Skill.find(params[:skill_id])
+    @skill.available = true
+    @skill.save
+
+    redirect_to skills_path
+    authorize @skill
+  end
+
   def index
     @skills = policy_scope(Skill)
   end
