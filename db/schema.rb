@@ -39,10 +39,12 @@ ActiveRecord::Schema.define(version: 2020_02_25_160017) do
   create_table "reviews", force: :cascade do |t|
     t.text "content"
     t.integer "rating"
-    t.bigint "skill_order_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "skill_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["skill_order_id"], name: "index_reviews_on_skill_order_id"
+    t.index ["skill_id"], name: "index_reviews_on_skill_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "skill_orders", force: :cascade do |t|
@@ -79,7 +81,8 @@ ActiveRecord::Schema.define(version: 2020_02_25_160017) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "reviews", "skill_orders"
+  add_foreign_key "reviews", "skills"
+  add_foreign_key "reviews", "users"
   add_foreign_key "skill_orders", "skills"
   add_foreign_key "skill_orders", "users"
 end

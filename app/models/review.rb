@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
-  #belongs_to :user, through: :skill_orders
-  #belongs_to :skill, through: :skill_orders
-  #belongs_to :skill_order
+  validates :rating, inclusion: { in: [0, 1, 2, 3, 4, 5] }
+  belongs_to :user
+  belongs_to :skill
+
 end

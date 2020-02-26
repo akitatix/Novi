@@ -21,4 +21,12 @@ class SkillPolicy < ApplicationPolicy
   def destroy?
     record.users.include? user  # Only restaurant creator can update it
   end
+
+  def achat?
+    true # Only restaurant creator can update it
+  end
+
+  def vente?
+    true # Only restaurant creator can update it
+  end
 end
