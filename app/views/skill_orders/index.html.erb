@@ -1,9 +1,10 @@
 <h1>Mes Skills</h1>
 <% @skill_orders.each do |x| %>
   <% if x.skill.users.include? current_user %>
-    <% p "je suis la !!!!!!!!!!!!" %>
-    <%= x.skill.name  %>
-    <%= x.skill.price  %>
-    <%= link_to "Send", vente_path(x.skill) %>
+    <% if x.skill.available == false %>
+      <%= x.skill.name  %>
+      <%= x.skill.price  %>
+      <%= link_to "Send", vente_path(x.skill) %>
+    <% end %>
   <% end %>
 <% end %>
