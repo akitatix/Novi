@@ -2,21 +2,27 @@
   <div class="container">
     <div class="cards-grid">
       <% @skills.each do |x|  %>
-        <div class="card-trip">
-          <div class="card-trip-infos">
-            <div>
-              <%= cl_image_tag x.photo.key, height: 300, width: 500, crop: :scale %>
-              <p><%= x.name %> - <%= link_to "show", skill_path(x) %>|<%= link_to "delete", skill_path(x), method: :delete %>|<%= link_to "edit", edit_skill_path(x)%></p>
+        <% if x.available == true %>
+          <div class="card-trip">
+            <div class="card-trip-infos">
+              <div>
+                <%= cl_image_tag x.photo.key, height: 300, width: 500, crop: :scale %>
+                <p><%= x.name %> - <%= link_to "show", skill_path(x) %>|<%= link_to "delete", skill_path(x), method: :delete %>|<%= link_to "edit", edit_skill_path(x)%></p>
+              </div>
             </div>
           </div>
-        </div>
-    <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 <% if user_signed_in? %>
 <div class="btn_new">
  <%= link_to "new", new_skill_path %>
 </div>
+<div class="btn_new">
+ <%= link_to "Mes Skills", skill_orders_path %>
+</div>
+
 
 
 <% end %>
