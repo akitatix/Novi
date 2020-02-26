@@ -1,8 +1,16 @@
-<h1><%= @skill.name %></h1>
-<p>Description :<%= @skill.description %></p>
-<h3>Price :<%= @skill.price %></h3>
-<%= cl_image_tag @skill.photo.key, height: 300, width: 500, crop: :scale %>
+<div class="user-pic" style="background-color: black">
+  <div class="tphoto">
 
+    <div class="skill">
+      <h1><%= @skill.name %></h1>
+      <p><%= @skill.description %></p>
+    </div>
+
+    <div class="price">
+      <h3>Price: <%= @skill.price %></h3>
+    </div>
+
+  <%= cl_image_tag @skill.photo.key, height: 300, width: 500, crop: :scale %>
 <% @reviews.each do |x| %>
   <%= x.rating %>
   <%= x.content %>
@@ -12,5 +20,7 @@
 
 <%= link_to "back", skills_path %>
 <%= link_to "New Review", new_skill_review_path(@skill) %>
+
 <%= link_to "Buy", achat_path(@skill) %>
+
 
