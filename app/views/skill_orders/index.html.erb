@@ -1,10 +1,24 @@
-<h1>Mes Skills</h1>
-<% @skill_orders.each do |x| %>
+<div class="titre-skill">
+  <h1>Vos commandes en cours</h1>
+</div>
+
+  <% @skill_orders.each do |x| %>
   <% if x.skill.users.include? current_user %>
-    <% if x.skill.available == false %>
-      <%= x.skill.name  %>
-      <%= x.skill.price  %>
-      <%= link_to "Send", vente_path(x.skill) %>
-    <% end %>
+  <% if x.skill.available == false %>
+
+
+<div class="articles-skill">
+  <div class="articles-skill-picture">
+    <%= cl_image_tag x.skill.photo.key %>
+  </div>
+
+  <div class="articles-skill-text">
+    <h2><%= x.skill.name  %></h2>
+    <p>Prix:<%= x.skill.price  %></p>
+    <%= link_to "Send", vente_path(x.skill) %>
+  </div>
+</div>
+
   <% end %>
-<% end %>
+  <% end %>
+  <% end %>
