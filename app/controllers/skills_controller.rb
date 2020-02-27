@@ -30,12 +30,6 @@ before_action :set_skill, only: [:new, :create]
     end
   end
 
-  # def search
-  #   @skills = Skill.search("%#{params[:query]}%", fields: [:name], match: :word_middle)
-
-  #   authorize @skills
-  # end
-
   def new
   end
 

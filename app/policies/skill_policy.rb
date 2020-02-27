@@ -29,8 +29,4 @@ class SkillPolicy < ApplicationPolicy
   def vente?
     true # Only restaurant creator can update it
   end
-
-  def search?
-    true
-  end
 end
