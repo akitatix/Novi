@@ -1,30 +1,40 @@
-.tphoto {
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom:10px;
+.main-div {
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 100%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  height: auto;
+}
+
+.summary-title h2 {
+  font-weight: 100;
+  padding: 20px;
 }
 
 .skill {
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 25px;
-  font-weight: normal;
-  border: 3px solid white;
-  padding: 10px;
+  height: 200px;
+  width: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   padding-bottom: 50px;
   margin-bottom: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.check-out h2 {
+  font-weight: 100;
+  font-family: Raleway;
 }
 
 .price {
-  display: inline-block;
-  position: relative;
-  left: 15px;
-  bottom: 40px;
-  max-width: 250px;
-  color: white;
-  font-size: 16px;
-  font-weight: normal;
-  padding: 10px;
-  background-color: black;
+  padding:20px;
+  font-family: Raleway;
 }
