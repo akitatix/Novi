@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   get 'skills/:skill_id/achat', to: 'skills#achat', as: 'achat'
   get 'skills/:skill_id/vente', to: 'skills#vente', as: 'vente'
+  # post 'skills/search', to: 'skills#search', as: 'search'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 
