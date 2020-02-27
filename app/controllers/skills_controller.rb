@@ -23,6 +23,11 @@ before_action :set_skill, only: [:new, :create]
 
   def index
     @skills = policy_scope(Skill)
+    if params[:query].present?
+      @skills = Skill.search("%#{params[:query]}%", fields: [:name], match: :word_middle, misspellings: {edit_distance: 1})
+    else
+      @skills = Skill.all
+    end
   end
 
   def new

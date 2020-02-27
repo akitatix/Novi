@@ -1,14 +1,17 @@
 <h1>Skills#index</h1>
   <%= link_to "new", new_skill_path, class:'mon-btn' %>
+  <% Skill.reindex %>
   <div class="container">
     <div class="cards-grid">
-      <% @skills.each do |x|  %>
-        <% if x.available == true %>
+        <% skills = Skill.search("%#{params[:query]}%", fields: [:name], match: :word_middle, misspellings: {edit_distance: 1}) %>
+        <% @skills.each do |skill|  %>
+        <%= puts skill.name %>
+        <% if skill.available == true %>
           <div class="card-trip">
             <div class="card-trip-infos">
               <div>
-                <%= cl_image_tag x.photo.key, height: 300, width: 500, crop: :scale %>
-                <p><%= x.name %> - <%= link_to "show", skill_path(x), class:'btn-card' %>|<%= link_to "delete", skill_path(x), method: :delete, class:'btn-card'  %>|<%= link_to "edit", edit_skill_path(x), class:'btn-card'%></p>
+                <%= cl_image_tag skill.photo.key, height: 300, width: 500, crop: :scale %>
+                <p><%= skill.name %> - <%= link_to "show", skill_path(skill), class:'btn-card' %>|<%= link_to "delete", skill_path(skill), method: :delete, class:'btn-card'  %>|<%= link_to "edit", edit_skill_path(skill), class:'btn-card'%></p>
               </div>
             </div>
           </div>

@@ -8,10 +8,14 @@
   </button>
 
   <div class="main">
-    <div class="form-group has-search">
-      <span class="fa fa-search form-control-feedback"></span>
-      <input type="text" class="form-control" placeholder="Search e.g: Tueur de dragon sur skyrim">
-    </div>
+    <%= form_tag skills_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a skills"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
   </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
