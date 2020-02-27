@@ -16,66 +16,16 @@
 
   <div class="container">
   <div class="cards-grid">
+  <% Skill.all.first(6).shuffle.each do |x| %>
     <div class="card-trip">
-      <%= image_tag "image_de_code.jpg", alt: "alttext" %>
+      <%= cl_image_tag x.photo.key, height: 300, width: 500, crop: :scale %>
       <div class="card-trip-infos">
         <div>
-          <h2>Apprendre à coder</h2>
-          <p>Devenez un maître à coder sur une sélection de languages.</p>
+          <h2><%= x.name  %></h2>
+          <p><%= x.description  %></p>
         </div>
       </div>
     </div>
-
-    <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <h2>Prise de parole en public</h2>
-          <p>Vous êtes timide et devez passer sur scène ? Aucun problème avec le charisme des plus grands orateurs.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <h2>Duel à l'épée</h2>
-          <p>Provoquez votre rival à l'épe et soyez sûr de gagner !</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <h2>Chasse à l'ours</h2>
-          <p>Devenez un pisteur hors-pair</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <h2>Préparation de potions</h2>
-          <p>Short description here!</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <h2>Parcours</h2>
-          <p>Short description here!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <% end %>
   </div>
 </body>
