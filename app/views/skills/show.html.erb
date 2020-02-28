@@ -1,19 +1,17 @@
-<div class="main-div" style="background-color: #000911">
+<div class="main-div">
 
-  <div class="summary-title">
-    <h2>Summary</h2>
+  <div class="skill-resume-title">
+    <h2>Résumé de vos informations</h2>
   </div>
 
-  <div class="check-out">
-    <h2> <%= @skill.name %></h2>
-    <h2><%= @skill.description %></h2>
-    <p>The picture you updated:</p>
-  </div>
-
-  <div class="skill" style="background-image: url(<%= cl_image_path @skill.photo.key %>)"></div>
-  <div class="price">
-    <h3>Price: <%= @skill.price %></h3>
-  </div>
+  <div class="skill-resume">
+    <div class="skill-resume-picture" style="background-image: url(<%= cl_image_path @skill.photo.key %>)"></div>
+      <div class="skill-resume-infos">
+        <h2> <%= @skill.name %></h2>
+        <p><%= @skill.description %></p>
+        <p><%= @skill.price %> euros</p>
+      </div>
+    </div>
 
   <% @reviews.each do |x| %>
     <% if x.skill == @skill %>

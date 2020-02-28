@@ -1,40 +1,32 @@
-.main-div {
-  color: white;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 100%;
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  height: auto;
-}
-
-.summary-title h2 {
-  font-weight: 100;
+.skill-resume-title {
   padding: 20px;
 }
 
-.skill {
+.skill-resume {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  min-height: 200px;
+}
+
+.skill-resume-picture {
   height: 200px;
   width: 300px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  padding-bottom: 50px;
-  margin-bottom: 10px;
-  display: block;
-  margin: 0 auto;
 }
 
-.check-out h2 {
+.skill-resume-infos {
   font-weight: 100;
-  font-family: Raleway;
+  padding: 20px;
+  padding-top: 0px;
 }
 
-.price {
-  padding:20px;
-  font-family: Raleway;
+.skill-resume-price {
+  font: bold;
+  text-color: green;
 }
