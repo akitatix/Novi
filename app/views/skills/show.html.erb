@@ -14,6 +14,7 @@
 
           <% @reviews.each do |x| %>
           <% if x.skill == @skill %>
+
           <p>Stars: <%= x.rating %></p>
           <p>Commentaire: <%= x.content %></p>
           <%= (link_to "Delete Review", skill_review_path(@skill,x), method: :delete) if x.skill.users.include? current_user %>
