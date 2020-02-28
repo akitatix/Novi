@@ -12,6 +12,14 @@
 @import "components/index";
 @import "pages/index";
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  flex-grow: 1;
+}
 
 .container {
   width: 1000px;
