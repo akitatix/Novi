@@ -25,10 +25,10 @@
   </div>
 </div>
 
+<div class="btn-card">
+<%= link_to "back", skills_path, class:'btn_no_move'%>
+<%= (link_to "Add Review",  new_skill_review_path(@skill), class:'btn_no_move')if @skill.users.include? current_user  %>
 
-<%= link_to "back", skills_path %>
-<%= (link_to "New Review", new_skill_review_path(@skill))if @skill.users.include? current_user %>
-
-<%= link_to "Buy", achat_path(@skill) %>
-
+<%= link_to "Buy", achat_path(@skill), class:'btn_no_move' %>
+</div>
 
