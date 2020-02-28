@@ -9,7 +9,9 @@
           <div class="card-trip">
             <div class="card-trip-infos">
               <div>
-                <%= cl_image_tag skill.photo.key, height: 300, width: 500, crop: :scale %>
+                <% if skill.photo.attached? %>
+                  <%= cl_image_tag skill.photo.key, height: 300, width: 500, crop: :scale %>
+                <% end %>
                 <p><%= skill.name %> - <%= link_to "show", skill_path(skill), class:'btn-card' %>
                   <%= (link_to "delete", skill_path(skill), method: :delete, class:'btn-card') if skill.users.include? current_user  %>
                   <%= (link_to "edit", edit_skill_path(skill), class:'btn-card') if skill.users.include? current_user %></p>
