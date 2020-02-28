@@ -16,6 +16,7 @@
     <h2><%= x.skill.name  %></h2>
     <p>Prix:<%= x.skill.price  %></p>
     <%= link_to "Send", vente_path(x.skill) %>
+    <%= link_to "show", skill_path(x.skill) %>
   </div>
 </div>
 
