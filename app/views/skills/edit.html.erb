@@ -1,10 +1,14 @@
-<h1>Skills edit</h1>
-<%= simple_form_for [@user, @skill] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <div class="newglobal">
+    <h1>Skills edit</h1>
+    <%= simple_form_for [@user, @skill] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit, id: "btn_new" %>
+    <% end %>
+    <%= link_to "back", skills_path, class:'mon-btn' %>
+  </div>
+</div>
 
-<%= link_to "back", skills_path, class:'mon-btn' %>
