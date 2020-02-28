@@ -16,12 +16,13 @@
   </div>
 
   <% @reviews.each do |x| %>
-    <%= x.rating %>
-    <%= x.content %>
-    <%= (link_to "Delete Review", skill_review_path(@skill,x), method: :delete) if x.skill.users.include? current_user %>
-    <%= (link_to "Edit Review", edit_skill_review_path(@skill,x)) if x.skill.users.include? current_user %>
+    <% if x.skill == @skill %>
+      <%= x.rating %>
+      <%= x.content %>
+      <%= (link_to "Delete Review", skill_review_path(@skill,x), method: :delete) if x.skill.users.include? current_user %>
+      <%= (link_to "Edit Review", edit_skill_review_path(@skill,x)) if x.skill.users.include? current_user %>
+    <% end  %>
   <% end %>
-
 </div>
 
 
