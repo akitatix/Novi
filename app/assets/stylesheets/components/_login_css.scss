@@ -53,13 +53,13 @@ body.sessions {
 }
 
 .top{
-  &:before{transform:rotate(45deg);background:#e46569;}
-  &:after{transform:rotate(135deg);background:#ecaf81;}
+  &:before{transform:rotate(45deg);background:#454955;}
+  &:after{transform:rotate(135deg);background:#004BA8;}
 }
 
 .bottom{
-  &:before{transform:rotate(-45deg);background:#60b8d4;}
-  &:after{transform:rotate(-135deg);background:#3745b5;}
+  &:before{transform:rotate(-45deg);background:#CED0CE;}
+  &:after{transform:rotate(-135deg);background:#9DD1F1;}
 }
 
 .center{
