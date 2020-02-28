@@ -1,7 +1,8 @@
   <%= link_to "new", new_skill_path, class:'mon-btn' %>
-  <% Skill.reindex %>
   <div class="container">
+    <h1>Test</h1>
     <div class="cards-grid">
+        <% Skill.reindex %>
         <% skills = Skill.search("%#{params[:query]}%", fields: [:name], match: :word_middle, misspellings: {edit_distance: 1}) %>
         <% @skills.each do |skill|  %>
         <%= puts skill.name %>
