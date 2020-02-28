@@ -20,7 +20,9 @@
   <% b = a.sample(6) %>
   <% b.each do |x| %>
       <div class="card-trip">
-        <%= cl_image_tag x.photo.key, height: 300, width: 500, crop: :scale %>
+        <% if x.photo.attached? %>
+          <%= cl_image_tag x.photo.key, height: 300, width: 500, crop: :scale %>
+        <% end %>
         <div class="card-trip-infos">
           <div>
             <h2><%= x.name  %></h2>

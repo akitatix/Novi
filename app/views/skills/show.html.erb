@@ -6,7 +6,11 @@
 
 
   <div class="skill-resume">
-    <div class="skill-resume-picture" style="background-image: url(<%= cl_image_path @skill.photo.key %>)"></div>
+    <% if @skill.photo.attached? %>
+      <div class="skill-resume-picture" style="background-image: url(<%= cl_image_path @skill.photo.key %>)"></div>
+    <% else %>
+      <div class="skill-resume-picture" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1280px-No_image_3x4.svg.png)"></div>
+    <% end %>
       <div class="skill-resume-infos">
         <h2> <%= @skill.name %></h2>
         <p><%= @skill.description %></p>
