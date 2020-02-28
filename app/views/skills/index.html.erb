@@ -1,6 +1,5 @@
   <%= link_to "new", new_skill_path, class:'mon-btn' %>
   <div class="container">
-    <h1>Test</h1>
     <div class="cards-grid">
         <% Skill.reindex %>
         <% skills = Skill.search("%#{params[:query]}%", fields: [:name], match: :word_middle, misspellings: {edit_distance: 1}) %>
@@ -23,6 +22,5 @@
   </div>
 <% if user_signed_in? %>
   <%= link_to "new", new_skill_path, class:'mon-btn' %>
-  <%= link_to "Mes Skills", skill_orders_path %>
 <% end %>
 

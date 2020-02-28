@@ -10,7 +10,7 @@
     <p>The picture you updated:</p>
   </div>
 
-  <div class="skill" style="background-image: url(<%= cl_image_path @skill.photo.key %>)"></div>
+  <div class="skill" style="background-image: url(<%= (cl_image_path @skill.photo.key) %>)"></div>
   <div class="price">
     <h3>Price: <%= @skill.price %></h3>
   </div>

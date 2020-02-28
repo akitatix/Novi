@@ -16,16 +16,17 @@
 
   <div class="container">
   <div class="cards-grid">
-  <% Skill.all.first(6).shuffle.each do |x| %>
-    <div class="card-trip">
-      <%= cl_image_tag x.photo.key, height: 300, width: 500, crop: :scale %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= x.name  %></h2>
-          <p><%= x.description  %></p>
+  <% Skill.all.sample(6).each do |x| %>
+    <% if x.available == true %>
+      <div class="card-trip">
+        <%= cl_image_tag x.photo.key, height: 300, width: 500, crop: :scale %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= x.name  %></h2>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
   </div>
 </body>
