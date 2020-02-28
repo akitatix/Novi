@@ -4,6 +4,7 @@
     <h2>Résumé de vos informations</h2>
   </div>
 
+
   <div class="skill-resume">
     <div class="skill-resume-picture" style="background-image: url(<%= cl_image_path @skill.photo.key %>)"></div>
       <div class="skill-resume-infos">
@@ -12,6 +13,7 @@
         <p><%= @skill.price %> euros</p>
       </div>
     </div>
+
 
   <% @reviews.each do |x| %>
     <% if x.skill == @skill %>
