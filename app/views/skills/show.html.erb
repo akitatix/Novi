@@ -17,8 +17,8 @@
 
           <p>Stars: <%= x.rating %></p>
           <p>Commentaire: <%= x.content %></p>
-          <%= (link_to "Delete Review", skill_review_path(@skill,x), method: :delete) if x.skill.users.include? current_user %>
-          <%= (link_to "Edit Review", edit_skill_review_path(@skill,x)) if x.skill.users.include? current_user %>
+          <%= (link_to "Delete Review", skill_review_path(@skill,x), method: :delete, class:'btn_no_move') if x.skill.users.include? current_user %>
+          <%= (link_to "Edit Review", edit_skill_review_path(@skill,x), class:'btn_no_move') if x.skill.users.include? current_user %>
         <% end  %>
       <% end %>
     </div>
