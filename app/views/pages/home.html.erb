@@ -16,8 +16,9 @@
 
   <div class="container">
   <div class="cards-grid">
-  <% Skill.all.sample(6).each do |x| %>
-    <% if x.available == true %>
+  <% a = Skill.where("available = true") %>
+  <% b = a.sample(6) %>
+  <% b.each do |x| %>
       <div class="card-trip">
         <%= cl_image_tag x.photo.key, height: 300, width: 500, crop: :scale %>
         <div class="card-trip-infos">
@@ -26,7 +27,6 @@
           </div>
         </div>
       </div>
-    <% end %>
   <% end %>
   </div>
 </body>
